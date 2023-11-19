@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LINES</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="border">
+  <div class="frame">
+    <canvas></canvas>
+  </div>
+</div>
+
+<script>
+  var canvas = document.querySelector('canvas');
+  var context = canvas.getContext('2d');
+
+  var size = window.innerWidth;
+  var dpr = window.devicePixelRatio;
+  canvas.width = size * dpr;
+  canvas.height = size * dpr;
+  context.scale(dpr, dpr);
+  context.lineWidth = 8;
+
+  var squares = [{
+    x: 0,
+    y: 0,
+    width: size,
+    height: size
+  }];
+
+  function splitSquaresWith(coordinates) {
+    // Loops through the squares, and find if
+    // one should be split
+  }
+
+  function splitOnX(square, splitAt) {
+    // Create two new squares, based on
+    // splitting the given one at the
+    // x coordinate given
+  }
+
+  function splitOnY(square, splitAt) {
+    // Create two new squares, based on
+    // splitting the given one at the
+    // y coordinate given
+  }
+
+  splitSquaresWith({x: 160})
+  splitSquaresWith({y: 160})
+
+  function draw() {
+    for (var i = 0; i < squares.length; i++) {
+      context.beginPath();
+      context.rect(
+        squares[i].x,
+        squares[i].y,
+        squares[i].width,
+        squares[i].height
+      );
+      context.stroke();
+    }
+  }
+
+  draw()
+
+</script>
+
+</body>
+</html>
